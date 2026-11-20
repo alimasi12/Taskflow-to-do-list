@@ -1,0 +1,79 @@
+/*Reset CSS, boutons, champs de formulaires, cartes réutilisables*/
+@import url('./variables.css');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body { 
+    font-family: var(--font-family);
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.5;
+    min-height: 100vh;
+}
+
+/*Formulaires accessibles et coherent*/
+.form-group{
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1.1rem;
+}
+
+.form-group label { 
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/*Boutons*/
+.btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.25rem;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+.btn-primary:hover{
+    background-color: var(--primary-hover);
+}
+.btn-full{
+    width: 100%
+}
+
+/*Adaptation tablette et écran moyen en d'autres termes c'est le responsive design
+(à partir de 768px de large)*/
+@media (min-width: 768px){
+    .btn{
+        padding: 0.8rem 1.5rem;
+    }
+}
+
+/*Sur très pétits écran (Largeur inférieur ou égale à 480px)*/
+
+@media (max-width: 480px){
+    body{
+        font-size: 0.95rem;
+    }
+    .btn{
+        width:100%;
+    }
+}
