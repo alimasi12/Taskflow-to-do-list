@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projets — TASKFLOW</title>
+    <link rel="stylesheet" href="../css/dashboard.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <!-- Barre supérieure mobile -->
+      <header class="mobile-topbar">
+        <a href="./dashboard.html" class="brand-mark">
+          <span class="brand-dot" aria-hidden="true"></span>
+          <span>TASKFLOW</span>
+        </a>
+        <button
+          type="button"
+          id="mobile-menu-btn"
+          class="menu-toggle"
+          aria-label="Ouvrir le menu de navigation"
+          aria-controls="main-sidebar"
+          aria-expanded="false"
+          onclick="toggleSidebar()"
+        >
+          ☰
+        </button>
+      </header>
+
+      <!-- Barre latérale -->
+      <aside
+        id="main-sidebar"
+        class="sidebar"
+        aria-label="Navigation principale"
+      >
+        <div>
+          <div class="sidebar-header">
+            <a href="./dashboard.html" class="brand-mark">
+              <span class="brand-dot" aria-hidden="true"></span>
+              <span>TASKFLOW</span>
+            </a>
+          </div>
+
+          <p class="nav-section-title">Espace de travail</p>
+          <nav>
+            <ul class="nav-list">
+              <li>
+                <a href="./dashboard.html" class="nav-link">Tableau de bord</a>
+              </li>
+              <li>
+                <a
+                  href="./projects.html"
+                  class="nav-link is-active"
+                  aria-current="page"
+                  >Projets</a
+                >
+              </li>
+              <li><a href="./tasks.html" class="nav-link">Tâches</a></li>
+            </ul>
+          </nav>
+
+          <p class="nav-section-title" style="margin-top: 1.15rem">Compte</p>
+          <nav aria-label="Gestion du compte">
+            <ul class="nav-list">
+              <li><a href="./login.html" class="nav-link">Déconnexion</a></li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- Contenu principal -->
+      <main class="workspace">
+        <header class="workspace-header">
+          <div>
+            <h1>Projets</h1>
+            <p>
+              Créez, organisez et archivez vos espaces de travail. Un projet
+              archivé n'accepte plus de nouvelles tâches.
+            </p>
+          </div>
+          <div class="header-actions">
+            <a href="./tasks.html" class="btn btn-secondary">Voir les tâches</a>
+          </div>
+        </header>
+
+        <!-- Formulaire de création d'un projet -->
+        <section
+          class="surface-panel"
+          aria-labelledby="create-project-heading"
+          style="margin-bottom: 1.5rem"
+        >
+          <div class="panel-top">
+            <h2 id="create-project-heading">Nouveau projet</h2>
+            <span class="badge badge--todo">Création</span>
+          </div>
+
+          <form id="project-form" action="#" method="post">
+            <div class="form-group">
+              <label for="project-name">Nom du projet</label>
+              <input
+                type="text"
+                id="project-name"
+                name="name"
+                placeholder="Ex. : Refonte site portfolio"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="project-description">Description (facultative)</label>
+              <textarea
+                id="project-description"
+                name="description"
+                rows="3"
+                placeholder="Décrivez brièvement l'objectif de ce projet..."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+              Créer le projet
+            </button>
+          </form>
+        </section>
+
+        <!-- Liste des projets -->
+        <section class="surface-panel" aria-labelledby="projects-list-heading">
+          <div class="panel-top">
+            <h2 id="projects-list-heading">Mes projets</h2>
+            <span class="badge badge--progress" id="projects-count-badge"
+              >2 projets</span
+            >
+          </div>
+
+          <ul class="task-feed" id="projects-list">
+            <li class="task-row">
+              <div>
+                <p class="task-main-title">Application TASKFLOW</p>
+                <span class="task-project-tag"
+                  >Développement Full Stack (HTML/CSS/JS, Node, Express,
+                  MySQL)</span
+                >
+              </div>
+              <div class="task-tags">
+                <span class="badge badge--done">ACTIF</span>
+                <button type="button" class="btn btn-secondary">
+                  Archiver
+                </button>
+              </div>
+            </li>
+
+            <li class="task-row">
+              <div>
+                <p class="task-main-title">Organisation académique</p>
+                <span class="task-project-tag"
+                  >Suivi des cours, dissertations et échéances</span
+                >
+              </div>
+              <div class="task-tags">
+                <span class="badge badge--done">ACTIF</span>
+                <button type="button" class="btn btn-secondary">
+                  Archiver
+                </button>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      function toggleSidebar() {
+        const sidebar = document.getElementById("main-sidebar");
+        const button = document.getElementById("mobile-menu-btn");
+        const isOpen = sidebar.classList.toggle("is-open");
+        button.setAttribute("aria-expanded", String(isOpen));
+      }
+    </script>
+  </body>
+</html>

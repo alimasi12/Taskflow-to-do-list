@@ -1,24 +1,98 @@
 /*Nos couleurs, polices, espacements, thèmes clairs/sombre*/
 :root {
-    /*Couleur principales*/
-    --primary-color: #2563eb;
-    --primary-hover: #1d4ed8;
-    --bg-main: #f8fafc;
+    /* Couleurs de marque & surfaces */
+    --brand-primary: #4f46e5;
+    --brand-primary-hover: #4338ca;
+    --brand-soft: rgba(79, 70, 229, 0.1);
+
+    --bg-app: #f1f5f9;
     --bg-surface: #ffffff;
-    --text-main: #0f172a;
+    --bg-subtle: #f8fafc;
+
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
     --text-muted: #64748b;
-    --border-color: #e2e8f0;
 
-    /*Couleur sémantiques (Statuts & Alertes)*/
-    --color-succes: #16a34a;
-    --color-warning: #d97706;
-    --color-danger: #dc2626;
-    --color-info: #0284c7;
+    --border-light: #e2e8f0;
+    --border-strong: #cbd5e1;
 
-    /*Typographie & Espacements*/
-    --font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-    --radius-sm: 6px;
-    --radius-md: 10px;
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08) ;
-    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08) ;
+    /* Couleurs sémantiques (Statuts & Priorités) */
+    --status-todo-bg: #f1f5f9;
+    --status-todo-text: #334155;
+
+    --status-progress-bg: #dbeafe;
+    --status-progress-text: #1d4ed8;
+
+    --status-review-bg: #fef3c7;
+    --status-review-text: #b45309;
+
+    --status-done-bg: #dcfce7;
+    --status-done-text: #15803d;
+
+    --priority-low-bg: #f1f5f9;
+    --priority-low-text: #475569;
+
+    --priority-medium-bg: #e0f2fe;
+    --priority-medium-text: #0369a1;
+
+    --priority-high-bg: #ffedd5;
+    --priority-high-text: #c2410c;
+
+    --priority-urgent-bg: #fee2e2;
+    --priority-urgent-text: #b91c1c;
+
+    /* Typographie, rayons & ombres */
+    --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-pill: 9999px;
+
+    --shadow-card: 0 1px 2px rgba(15, 23, 42, 0.04), 0 4px 12px rgba(15, 23, 42, 0.03);
+    --shadow-focus: 0 0 0 3px rgba(79, 70, 229, 0.18);
+    --transition-fast: 160ms ease;
+}
+
+/* Préparation du thème sombre (sera activable en Phase 3/4) */
+[data-theme="dark"] {
+    --brand-primary: #6366f1;
+    --brand-primary-hover: #818cf8;
+    --brand-soft: rgba(99, 102, 241, 0.16);
+
+    --bg-app: #0b1120;
+    --bg-surface: #111827;
+    --bg-subtle: #1e293b;
+
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+
+    --border-light: #1e293b;
+    --border-strong: #334155;
+
+    --status-todo-bg: #1e293b;
+    --status-todo-text: #cbd5e1;
+
+    --status-progress-bg: rgba(59, 130, 246, 0.2);
+    --status-progress-text: #93c5fd;
+
+    --status-review-bg: rgba(245, 158, 11, 0.2);
+    --status-review-text: #fcd34d;
+
+    --status-done-bg: rgba(34, 197, 94, 0.2);
+    --status-done-text: #86efac;
+
+    --priority-low-bg: #1e293b;
+    --priority-low-text: #94a3b8;
+
+    --priority-medium-bg: rgba(14, 165, 233, 0.2);
+    --priority-medium-text: #7dd3fc;
+
+    --priority-high-bg: rgba(249, 115, 22, 0.2);
+    --priority-high-text: #fdba74;
+
+    --priority-urgent-bg: rgba(239, 68, 68, 0.22);
+    --priority-urgent-text: #fca5a5;
+
+    --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.35);
 }

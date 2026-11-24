@@ -1,1 +1,169 @@
 <!--Tableau de bord -->
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tableau de bord — TASKFLOW</title>
+    <link rel="stylesheet" href="../css/dashboard.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="mobile-topbar">
+        <a href="./dashboard.html" class="brand-mark">
+          <span class="brand-dot" aria-hidden="true"></span>
+          <span>TASKFLOW</span>
+        </a>
+        <button
+          type="button"
+          class="menu-toggle"
+          aria-label="Ouvrir le menu de navigation"
+          aria-expanded="false"
+          onclick="
+            document.getElementById('main-sidebar').classList.toggle('is-open')
+          "
+        >
+          ☰
+        </button>
+      </header>
+
+      <aside
+        id="main-sidebar"
+        class="sidebar"
+        aria-label="Navigation principale"
+      >
+        <div>
+          <div class="sidebar-header">
+            <a href="./dashboard.html" class="brand-mark">
+              <span class="brand-dot" aria-hidden="true"></span>
+              <span>TASKFLOW</span>
+            </a>
+          </div>
+
+          <p class="nav-section-title">Espace de travail</p>
+          <nav>
+            <ul class="nav-list">
+              <li>
+                <a href="./dashboard.html" class="nav-link is-active"
+                  >Tableau de bord</a
+                >
+              </li>
+              <li><a href="#" class="nav-link">Projets</a></li>
+              <li><a href="#" class="nav-link">Tâches</a></li>
+              <li><a href="#" class="nav-link">Vue Kanban</a></li>
+            </ul>
+          </nav>
+
+          <p class="nav-section-title" style="margin-top: 1rem">Compte</p>
+          <nav aria-label="Paramètres du compte">
+            <ul class="nav-list">
+              <li><a href="#" class="nav-link">Profil</a></li>
+              <li><a href="#" class="nav-link">Paramètres</a></li>
+              <li><a href="./login.html" class="nav-link">Déconnexion</a></li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+
+      <main class="workspace">
+        <header class="workspace-header">
+          <div>
+            <h1>Tableau de bord</h1>
+            <p>
+              Centralisez vos priorités, suivez vos échéances et gardez une vue
+              claire sur vos projets.
+            </p>
+          </div>
+          <div class="header-actions">
+            <button type="button" class="btn btn-secondary">
+              + Nouveau projet
+            </button>
+            <button type="button" class="btn btn-primary">
+              + Nouvelle tâche
+            </button>
+          </div>
+        </header>
+
+        <section class="kpi-grid" aria-label="Indicateurs clés">
+          <article class="kpi-card">
+            <span class="kpi-label">Tâches actives</span>
+            <strong class="kpi-value" id="kpi-active-tasks">0</strong>
+            <span class="kpi-sub">Hors archive</span>
+          </article>
+          <article class="kpi-card">
+            <span class="kpi-label">Tâches en cours</span>
+            <strong class="kpi-value" id="kpi-in-progress">0</strong>
+            <span class="kpi-sub">Statut IN_PROGRESS</span>
+          </article>
+          <article class="kpi-card">
+            <span class="kpi-label">Tâches terminées</span>
+            <strong class="kpi-value" id="kpi-done">0</strong>
+            <span class="kpi-sub">Statut DONE</span>
+          </article>
+          <article class="kpi-card">
+            <span class="kpi-label">Tâches en retard</span>
+            <strong class="kpi-value" id="kpi-overdue">0</strong>
+            <span class="kpi-sub">Échéance dépassée</span>
+          </article>
+          <article class="kpi-card">
+            <span class="kpi-label">Projets actifs</span>
+            <strong class="kpi-value" id="kpi-active-projects">0</strong>
+            <span class="kpi-sub">Projets non archivés</span>
+          </article>
+        </section>
+
+        <section class="progress-card" aria-label="Progression globale">
+          <div class="progress-top">
+            <span>Progression globale des tâches</span>
+            <span id="global-progress-label">0 %</span>
+          </div>
+          <div class="progress-track">
+            <div
+              class="progress-fill"
+              id="global-progress-bar"
+              style="width: 0%"
+            ></div>
+          </div>
+        </section>
+
+        <section class="surface-panel" aria-labelledby="recent-tasks-heading">
+          <div class="panel-top">
+            <h2 id="recent-tasks-heading">Tâches récentes</h2>
+            <span class="badge badge--todo">Aperçu UI (Phase 3)</span>
+          </div>
+
+          <ul class="task-feed" id="recent-tasks-feed">
+            <li class="task-row">
+              <div>
+                <p class="task-main-title">
+                  Finaliser l'identité UI/UX de TASKFLOW
+                </p>
+                <span class="task-project-tag">Projet : MVP TASKFLOW</span>
+              </div>
+              <div class="task-tags">
+                <span class="badge badge--progress">IN_PROGRESS</span>
+                <span class="badge badge--high">HIGH</span>
+                <span class="due-text">Échéance : 26/11/2026</span>
+              </div>
+            </li>
+            <li class="task-row">
+              <div>
+                <p class="task-main-title">
+                  Concevoir le modèle relationnel MySQL
+                </p>
+                <span class="task-project-tag"
+                  >Projet : Backend &amp; Données</span
+                >
+              </div>
+              <div class="task-tags">
+                <span class="badge badge--todo">TODO</span>
+                <span class="badge badge--medium">MEDIUM</span>
+                <span class="due-text">Échéance : 28/11/2026</span>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
